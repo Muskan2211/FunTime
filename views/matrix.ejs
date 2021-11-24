@@ -1,0 +1,151 @@
+<%- include("header") -%>
+
+  <div class="contaier-fluid leftpad">
+    <div class="row">
+      
+      <div class = "col-lg-4 game-part" >TRUTH</div>
+      <div class = "col-lg-4 game-part" >DARE</div>
+      <div class = "col-lg-4 game-part" >PLAYERS</div>
+    </div>
+    <div class="row">
+      <div class = "col-lg-4" >
+        <div class="scene scene--card">
+          <div class="truthcard">
+              <div class="card__face card__face--front">
+                <img src="../images/angel1.jpg"  class = "card-img">
+              </div>
+              <div class="card__face card__face--back">
+                  <p id="truth">Back</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class = "col-lg-4" >
+        <div class="scene scene--card">
+          <div class="darecard">
+              <div class="card__face card__face--front">
+                <img src="../images/devil1.jpg" class="card-img">
+              </div>
+              <div class="card__face card__face--back">
+                  <p id="dare">Back</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class = "col-lg-4">
+        <form action="/players" method="post">
+                <% newPlayers.forEach(function(item){ %>
+                      <div class="playername">
+                        <p><%=item%></p>
+                      </div>
+                <%});%>
+                <input  type="text" name="playernames" class="playernameinput" autocomplete="off">
+                <button type="submit" class="playbutton"> + </button>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="row row-2">
+      <div class="col-lg-7" style="background-color: grey;">
+        <div class="headquestion">
+        <h5> QUESTIONS </h5>
+        </div>
+      </div>
+      <div class="col-lg-2" style="background-color: yellow;">
+        <div class="headmany">
+          <h5>TRUTH</h5>
+        </div>
+      </div>
+      <div class="col-lg-2" style="background-color: green;">
+        <div class="headmany">
+          <h5> DARE</h5>
+        </div>
+      </div>
+    </div>
+    
+    <form class="secondform" action="/question" method="post"></form>
+      <div class="row">
+          <div class="col-lg-7" style="background-color: orange;"><input class="questions" type="text" name="questions" autocomplete="off"></div>
+          <div class="col-lg-2" style="background-color: hotpink;"><input class="checkclass" type="checkbox" name="truth"></div>
+          <div class="col-lg-2" style="background-color: purple;"><input  class="checkclass" type="checkbox" name="dare"></div>
+          <div class="col-lg-1" style="background-color: green;"><button type="submit" class="addquestion" id="questionbutton"> + </button></div>
+      </div>   
+    </form>  -->
+  </div>
+
+  <script>
+    var newTruth = [
+                    "Tell one thing you don't like about yourself", 
+                    "Have you ever bunked class in school", 
+                    "Tell Scary incident of your life in funny way", 
+                    "Is there anything which you decide you will never learn but caught in situation where you have to learn it", 
+                    "Who is your favourite Avenger?", 
+                    "Safe!!", 
+                    "Tell any funny stupid incident of your life" ,
+                    "What you do to handle stress, make sure It's funny one.", 
+                    "What’s the last lie you told?", 
+                    "If you met a genie, what would your wishes be?", 
+                    "What’s one thing you’d do if you knew there no consequences?", 
+                    "What app do you waste the most time on?", 
+                    "What’s your biggest regret in life?", 
+                    "What’s the last thing you Googled?"
+    ];
+    const
+        $truthcard = document.querySelector('.truthcard'),
+        $truth = document.querySelector('#truth');
+    let display_text = true;
+    $truthcard.addEventListener('click', function () {
+        $truthcard.classList.toggle('is-flipped');
+
+        if (display_text) {
+            let random_num = Math.floor(Math.random() * newTruth.length);
+            if(newTruth.length==0) {
+              $truth.innerHTML = "Over";
+            }else{
+              $truth.innerHTML = newTruth[random_num];
+              newTruth.splice(random_num, 1);
+            }
+        }
+
+        display_text = !display_text;
+    });
+
+    var newDare = [ "Icecream 🍨",
+                    "Daal Baati Chokha", 
+                    "The Disneyland Park", 
+                    "Greece", 
+                    "Bali", 
+                    "Burger 🍔", 
+                    "Sochi", 
+                    "Pani puri",
+                    "Tell Scary incident of your life in funny way", 
+                    "Live dare from members", 
+                    "Live dare from members", 
+                    "Safe!!", 
+                    "Make a smiling face", 
+                    "Make a sad face", 
+                    "Play or Sing your favourite song" 
+                ];
+    const
+        $darecard = document.querySelector('.darecard'),
+        $dare = document.querySelector('#dare');
+    let display_text_dare = true;
+    $darecard.addEventListener('click', function () {
+        $darecard.classList.toggle('is-flipped');
+
+        if (display_text_dare) {
+            let random_num = Math.floor(Math.random() * newDare.length);
+            if(newDare.length==0) {
+              $dare.innerHTML = "Over";
+            }
+            else {
+              $dare.innerHTML = newDare[random_num];
+              newDare.splice(random_num, 1);
+            }
+        }
+
+        display_text_dare = !display_text_dare;
+    });
+  </script>
+<%- include("footer") -%>

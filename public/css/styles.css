@@ -1,0 +1,221 @@
+
+body{
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+}
+
+a:link {color:grey;}
+a:visited {color:black;}
+a:hover   {color:#A683E3;}
+
+
+/* heading of the page */
+.headers {
+  background-color: #000;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.tasktab{
+  text-align: center;
+  background-color: #B2B1B9;
+}
+
+.heading {
+  color: white;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  padding-left: 36px;
+}
+
+.row {
+padding-top: 0.5rem;
+}
+
+.row-2 {
+  margin-top: 1rem;
+}
+
+
+/* Adding more questions */
+
+.game-part {
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.checkclass{
+  background: white;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  border-color: #A683E3;
+  border-radius: 5px;
+  margin-right: 2rem;
+  margin: auto;
+}
+
+.addquestion {
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #A683E3;
+  color: #fff;
+  font-size: 30px;
+  border-width: 0;
+  margin: auto;
+}
+
+.headmany {
+  background-color: #A683E3;
+  text-align: center;
+  color:white;
+  border-radius: 5px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  margin-left: 2rem;
+  margin: auto;
+}
+
+.headquestion {
+  background-color: #A683E3;
+  text-align: center;
+  color:white;
+  border-radius: 5px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.questions{
+  border-color: #A683E3;
+  border-radius: 5px;
+  margin-right: 2rem;
+  margin: auto;
+}
+
+#questionbutton {
+  margin: auto;
+  float: right;
+  margin-left: 2rem;
+}
+
+/* content padding for whole page*/
+.leftpad {
+  padding-left: 52px;
+  padding-right: 52px;
+  padding-top: 52px;
+}
+
+/* players name*/
+.playername{
+  background-color: #787A91;
+  text-align: center;
+  color:white;
+  border-radius: 5px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.playernameinput{
+  border-color: #787A91;
+  border-radius: 5px;
+  width: 15rem;
+  margin-right: 1rem;
+}
+
+.playbutton{
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #787A91;
+  color: #fff;
+  font-size: 30px;
+  border-width: 0;
+  margin: auto;
+}
+
+
+/* CARDS */
+.card-img {
+border: 1px solid black;
+}
+
+.scene {
+  margin: auto;
+  width: 300px;
+  height: 500px;
+  border: 1px solid #CCC;
+  perspective: 600px;
+}
+
+.truthcard {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.darecard {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.truthcard.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.darecard.is-flipped {
+  transform: rotateY(180deg);
+}
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: white;
+}
+
+.card__face--back {
+  background: black;
+  transform: rotateY(180deg);
+}
+
+
+/* FOOTER SECTION */
+footer {
+  position:relative;
+  text-align: center;
+  top:70px;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.social-icon{
+  margin: 20px 10px;
+}
+
+a:link{color:grey;}
+a:visited{color:black;}
+a:hover{color:#A683E3;}
