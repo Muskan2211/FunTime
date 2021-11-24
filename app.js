@@ -14,14 +14,14 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.use(session({
-  secret: "our little secret",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://admin-muskan:Muskan1234@cluster0.bmbo9.mongodb.net/gamesDB", {useNewUrlParser: true, useUnifiedTopology: true} );
+mongoose.connect("mongodb+srv://admin-muskan:"+ process.env.PASSWORD +"@cluster0.bmbo9.mongodb.net/gamesDB", {useNewUrlParser: true, useUnifiedTopology: true} );
 mongoose.set("useCreateIndex", true);
 
 const itemsSchema=new mongoose.Schema({
